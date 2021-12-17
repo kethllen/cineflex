@@ -16,6 +16,8 @@ const Logo = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #C3CFD9;
+    position: fixed;
+    top:0px;
 
 
     span{

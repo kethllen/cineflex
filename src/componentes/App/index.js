@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar";
-import Corpo from "../Corpo";
+import Filmes from "../Filmes";
+import Sessao from "../Sessao"
 
 
 export default function App(){
@@ -10,7 +11,8 @@ export default function App(){
         <BrowserRouter>
             <Navbar/>
             <Routes>
-                <Route path="/" element={<Corpo/>}></Route>
+                <Route path="/" element={<Filmes/>}></Route>
+                <Route path="/sessoes/:idFilme" element={<Sessao/>}></Route>
             </Routes>        
         </BrowserRouter>
     );

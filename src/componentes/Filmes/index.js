@@ -14,7 +14,7 @@ export default function Filmes(){
 			setfilmes(resposta.data);
 		});
 	}, []);
-    console.log(filmes)
+
     if(filmes.length == 0){
         return(
             <Conteiner>
@@ -22,12 +22,15 @@ export default function Filmes(){
             </Conteiner>
         )
     }
-
-
     return (
-		<Conteiner>
-			{filmes.map(filme => <Filme key={filme.id} title={filme.title} posterURL={filme.posterURL} overview={filme.overview} releaseDate={filme.releaseDate}/>)}
-		</Conteiner>
+        <>
+            <Titulo>
+                <span>Selecione o filme</span>
+            </Titulo>
+            <Conteiner>
+                {filmes.map(filme => <Filme key={filme.id} id={filme.id} title={filme.title} posterURL={filme.posterURL} overview={filme.overview} releaseDate={filme.releaseDate}/>)}
+            </Conteiner>
+        </>
 	);
 }
 
@@ -35,4 +38,24 @@ const Conteiner = styled.div`
     display: flex;
     flex-wrap: wrap ;
     justify-content: space-around;
+`
+const Titulo = styled.div`
+    height: 110px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:67px;
+
+    span{
+    font-family:'Roboto', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color:#293845;
+
+    }
 `

@@ -1,11 +1,16 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
-export default function Filme({key, title, posterURL, overview, releaseDate}){
+
+export default function Filme({id, title, posterURL, overview, releaseDate}){
 
     return(
-        <Conteiner>
-           <img src={posterURL}></img>
-        </Conteiner>
+        <Link to={`/sessoes/${id}`}>
+            <Conteiner>
+                <img src={posterURL}></img>
+            </Conteiner>
+        </Link>
+        
     );
 }
 
@@ -23,10 +28,6 @@ const Conteiner = styled.div`
     img{
         height: 193px;
         width: 129px;
-        left: 213px;
-        top: 177px;
-        border-radius: 0px;
-
     }
 
 `

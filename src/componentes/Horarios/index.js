@@ -1,14 +1,19 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 export default function Horarios({data, weekday, showtimes}){
-    console.log(data.data)
-    console.log(weekday)
-    console.log(showtimes)
+
     return(
         <Sessoes>
             <span>{weekday}-{data}</span>
             <div className="Hora">
-            {showtimes.map(hora => <button>{hora.name}</button>)}
+            {showtimes.map(hora =>{
+                return(
+                    <Link to={`/assentos/${hora.id}`}>
+                        <button>{hora.name}</button>
+                    </Link>    
+                )
+            } )}
             </div>
         </Sessoes>
         
@@ -41,6 +46,7 @@ const Sessoes = styled.div`
     button{
     height: 43px;
     width: 83px;
+    border:none;
     border-radius: 3px;
     background-color: #E8833A ;
     font-family:'Roboto', sans-serif;

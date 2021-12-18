@@ -21,7 +21,7 @@ export default function Sessao(){
     if(sessao.length == 0){
         return <Load/> 
     }
-    console.log(sessao.days)
+
     return (
         <>
             <Titulo>
@@ -41,31 +41,32 @@ export default function Sessao(){
 }
 const Hora= styled.div`
     padding-bottom: 120px ;`
+
 const Rodape = styled.div`
-    height: 117px;
-    width: 100%;
-    position: fixed;
-    bottom:0;
-    display: flex;
-    align-items:center;
-    background-color: #DFE6ED;
-    border: 1px solid #9EADBA;
-    padding-left: 10px;
+height: 117px;
+width: 100%;
+position: fixed;
+bottom:0;
+display: flex;
+margin-right:10px;;
+align-items:center;
+background-color: #DFE6ED;
+border: 1px solid #9EADBA;
+padding-left: 10px;
 
-    span{
-        height: 40px;
-        width: 169px;
-        font-family:'Roboto', sans-serif;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: 0em;
-        text-align: left;
-        margin-left:14px;
-        color: #293845;
+span{
+    width: 70%;
+    font-family:'Roboto', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left:14px;
+    color: #293845;
 
-    }
+}
 
 `
 const Conteiner = styled.div`

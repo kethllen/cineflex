@@ -12,7 +12,7 @@ export default function DadosComprador(){
             <SetDados>CPF do comprador:</SetDados>
             <GetNome placeholder="Digite seu cpf..." value={cpf} onChange={event => setCpf(event.target.value)} />
             <Conteiner>
-                <Link to='/'>
+                <Link to='/sucesso'>
                     <Reservar>Reservar assento(s)</Reservar>
                 </Link>
             </Conteiner>

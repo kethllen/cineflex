@@ -17,11 +17,10 @@ export default function Sala({id, isAvailable, name, poltronas, setPoltronas} ){
             if(selecionado==false && isAvailable==true){
                 setSelecionado(true);
                 setPoltronas([...poltronas, id])
-                console.log(poltronas)
             }else if(isAvailable==true){
                 setSelecionado(false);
                 const novo = poltronas.filter((assento)=> assento!== id? true: false)
-                setPoltronas(novo)
+                setPoltronas(novo)                
             }
             }}>
             <span>{name}</span>

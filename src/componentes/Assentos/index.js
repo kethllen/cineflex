@@ -40,7 +40,7 @@ export default function Assentos(){
                 <Conteiner>
                     <img src={assentos.movie.posterURL}></img>
                 </Conteiner>
-                <span>{assentos.movie.title}</span>
+                <span>{assentos.movie.title}<br></br>{assentos.day.weekday} - {assentos.name}</span>
             </Rodape>
         </>
 	);

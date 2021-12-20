@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-export default function DadosComprador(){
+export default function DadosComprador({poltronas, assentos, idpoltronas}){
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     return(
@@ -12,7 +12,7 @@ export default function DadosComprador(){
             <SetDados>CPF do comprador:</SetDados>
             <GetNome placeholder="Digite seu cpf..." value={cpf} onChange={event => setCpf(event.target.value)} />
             <Conteiner>
-                <Link to='/sucesso'>
+                <Link to='/sucesso'state = {{poltronas:poltronas, cpf:cpf, nome:nome, assentos:assentos, idpoltronas:idpoltronas}}>
                     <Reservar>Reservar assento(s)</Reservar>
                 </Link>
             </Conteiner>

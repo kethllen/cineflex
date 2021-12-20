@@ -12,6 +12,7 @@ export default function Assentos(){
     const {idSessao} = useParams();
     const [assentos, setassentos] = useState([]);
     const [poltronas, setPoltronas]=useState([]);
+    const [idpoltronas, setIdPoltronas] = useState([])
 
 	useEffect(() => {
 		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/showtimes/${idSessao}/seats`);
@@ -25,17 +26,16 @@ export default function Assentos(){
         return <Load/> 
     }
 
-    console.log(assentos)
     return (
         <>
             <Titulo>
                 <span>Selecione o(s) assento(s)</span>
             </Titulo>
             <Conteudo>
-            {assentos.seats.map(assento => <Sala key={assento.id} isAvailable={assento.isAvailable} id={assento.id} name={assento.name} poltronas={poltronas} setPoltronas={setPoltronas}/>)}
+            {assentos.seats.map(assento => <Sala key={assento.id} isAvailable={assento.isAvailable} id={assento.id} name={assento.name} poltronas={poltronas} setPoltronas={setPoltronas} idpoltronas={idpoltronas} setIdPoltronas={setIdPoltronas}/>)}
             </Conteudo>
             <Legenda/>
-            <DadosComprador/>
+            <DadosComprador poltronas={poltronas} assentos={assentos} idpoltronas={idpoltronas}/>
             <Rodape>
                 <Conteiner>
                     <img src={assentos.movie.posterURL}></img>

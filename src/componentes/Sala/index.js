@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components'
 
-export default function Sala({id, isAvailable, name, poltronas, setPoltronas} ){
+export default function Sala({id, isAvailable, name, poltronas, setPoltronas, idpoltronas, setIdPoltronas} ){
     const [ selecionado, setSelecionado] = useState(false);
     let color, borda;
     if(selecionado == false){
@@ -16,11 +16,14 @@ export default function Sala({id, isAvailable, name, poltronas, setPoltronas} ){
         <AssentoCinema color={color} borda={borda} onClick={()=> {
             if(selecionado==false && isAvailable==true){
                 setSelecionado(true);
-                setPoltronas([...poltronas, id])
+                setPoltronas([...poltronas, name])
+                setIdPoltronas([...idpoltronas, id])
             }else if(isAvailable==true){
                 setSelecionado(false);
-                const novo = poltronas.filter((assento)=> assento!== id? true: false)
-                setPoltronas(novo)                
+                const novo = poltronas.filter((assento)=> assento!== name? true: false)
+                const novoId = idpoltronas.filter((assento)=> assento!== id? true: false)
+                setPoltronas(novo)
+                setIdPoltronas(novoId)                
             }
             }}>
             <span>{name}</span>
